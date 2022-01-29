@@ -1,0 +1,20 @@
+﻿@page
+@model pizza_mama.Pages.Admin.LoginModel
+@{
+    ViewData["Title"] = "Connexion";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if(Model.DisplayInvalidAccountMessage){
+    <br />
+    <div class="alert alert-danger" role="alert">
+        ERREUR : ce compte est invalide
+    </div>
+}
+
+<form method="post">
+    <input class="form-control w-25" type="text" name="username" placeholder="Login"> <br />
+    <input class="form-control w-25" type="password" name="password" placeholder="Mot de passe"> <br />
+    <button class="btn btn-primary">Se connecter</button> <br />
+</form>

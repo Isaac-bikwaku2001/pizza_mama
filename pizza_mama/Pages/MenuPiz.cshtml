@@ -1,0 +1,33 @@
+﻿@page
+@model pizza_mama.Pages.MenuPizModel
+@{
+}
+
+<html>
+    <head>
+        <title>Menu des Pizzas</title>
+        <link rel="stylesheet" href="~/css/style.css" />
+    </head>
+    <body>
+
+        <a asp-page="Index"><img src="~/images/small_logo.png" id="small_logo" /></a>
+
+        <h1>Les pizzas</h1>
+        <div class="menu_list">
+            @foreach (var item in Model.Pizza)
+           {
+               <div class="menu_list_item">
+                   <span class="menu_list_title">@item.nom</span>
+                   <span class="list_price">@String.Format("{0:0.00}", item.prix)£</span>
+                   <span class="list_ingredients">@item.ingredients</span>
+
+                @if (item.vegetarienne)
+                {
+                    <span class="list_badge">VEGETARIENNE</span>
+                }
+                </div>
+           }
+        </div>
+        <br />
+    </body>
+</html>
